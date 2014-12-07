@@ -1,0 +1,21 @@
+{
+  "name": "dice-roller",
+  "version": "1.0.0",
+  "description": "A utility for rolling dice",
+  "main": "dice.js",
+  "scripts": {
+    "test": "mocha -u tdd"
+  },
+  "keywords": [
+    "example"
+  ],
+  "author": "Matthew Nuzum",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "mocha": "^2.0.1",
+    "mockery": "^1.4.0",
+    "sinon": "^1.12.1",
+    "sinon-chai": "^2.6.0"
+  }
+}
