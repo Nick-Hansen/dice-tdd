@@ -42,7 +42,7 @@ describe('Test for dice module', function() {
 
 	});
 
-	it('Should not be a decimal number', function() {
+	it('Should not be a whole number', function() {
 		expect(dice.roll() % 1).to.equal(0);
 	});
 
