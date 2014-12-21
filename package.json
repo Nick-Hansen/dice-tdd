@@ -10,7 +10,8 @@
     "node": ">= 0.10.0"
   },
   "scripts": {
-    "test": "mocha -u tdd"
+    "test": "mocha -u tdd",
+    "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- test/"
   },
   "keywords": [
     "tdd",
