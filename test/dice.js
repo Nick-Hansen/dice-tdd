@@ -30,8 +30,14 @@ describe('Test for dice module', function() {
 	});
 
 	it('Should be a number within a valid range when rolled', function() {
-		expect(dice.roll()).to.be.within(1,6);
+		expect(dice.roll()).to.equal(6);
 	});
+
+  it('Should be a number within a valid range when rolled 2', function() {
+    randomStub.returns(0.00001);
+    expect(dice.roll()).to.equal(1);
+    randomStub.returns(0.999999);
+  });
 
 	it('Should use a random number', function() {
 		callCount = randomStub.callCount;
@@ -42,7 +48,7 @@ describe('Test for dice module', function() {
 
 	});
 
-	it('Should not be a whole number', function() {
+	it('Should be a whole number', function() {
 		expect(dice.roll() % 1).to.equal(0);
 	});
 
@@ -61,6 +67,6 @@ describe('Test for dice module', function() {
     dice.roll();
     dice.clearHistory();
     expect(dice.rollHistory().length).to.equal(0);
-  })
+  });
 
 })
