@@ -1,4 +1,4 @@
-dice-roller
+dice-tdd
 ===========
 
 This module helps you learn TDD while writing a Node.js module.
@@ -72,7 +72,7 @@ is also an `after()` function which reverses this functionality.
 How to check your work
 ======================
 
-There is a branch called [completed](https://github.com/newz2000/dice-roller/tree/completed) which you can use to compare your work against my completed module. The easy
+There is a branch called [completed](https://github.com/newz2000/dice-tdd/tree/completed) which you can use to compare your work against my completed module. The easy
 way to review that code is to look at it here on Github, but you can also fetch that branch and review it locally.
 
 Comments, questions and issues are welcome.
