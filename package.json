@@ -5,7 +5,7 @@
   "main": "dice.js",
   "author": "Matthew Nuzum",
   "homepage": "http://www.bearfruit.org/2014/12/09/how-to-unit-test-node-js-including-mocking-and-tdd/",
-  "repository": "https://github.com/newz2000/dice-roller",
+  "repository": "https://github.com/newz2000/dice-tdd",
   "engines": {
     "node": ">= 0.10.0"
   },
