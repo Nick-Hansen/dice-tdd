@@ -9,29 +9,29 @@ chai.use(sinonChai);
 
 describe('Test for dice module', function() {
 
-	var randomStub;
+  var randomStub;
 
-	before(function() {
-		mockery.enable({
-			warnOnReplace: false,
-			warnOnRunregistered: false,
-			useCleanCache: true
-		});
+  before(function() {
+  mockery.enable({
+    warnOnReplace: false,
+    warnOnRunregistered: false,
+    useCleanCache: true
+  });
 
-		randomStub = sinon.stub().returns(0.99999);
+  randomStub = sinon.stub().returns(0.99999);
 
-		mockery.registerMock('./randomHelper', randomStub);
+  mockery.registerMock('./randomHelper', randomStub);
 
-		dice = require('../dice');
-	});
+  dice = require('../dice');
+  });
 
-	after(function() {
-		mockery.disable();
-	});
+  after(function() {
+    mockery.disable();
+  });
 
-	it('Should be a number within a valid range when rolled', function() {
-		expect(dice.roll()).to.equal(6);
-	});
+  it('Should be a number within a valid range when rolled', function() {
+    expect(dice.roll()).to.equal(6);
+  });
 
   it('Should be a number within a valid range when rolled 2', function() {
     randomStub.returns(0.00001);
@@ -39,23 +39,23 @@ describe('Test for dice module', function() {
     randomStub.returns(0.999999);
   });
 
-	it('Should use a random number', function() {
-		callCount = randomStub.callCount;
+  it('Should use a random number', function() {
+    callCount = randomStub.callCount;
 
-		dice.roll();
+    dice.roll();
 
-		expect(randomStub.callCount).to.equal(callCount + 1);
+    expect(randomStub.callCount).to.equal(callCount + 1);
 
-	});
+  });
 
-	it('Should be a whole number', function() {
-		expect(dice.roll() % 1).to.equal(0);
-	});
+  it('Should be a whole number', function() {
+    expect(dice.roll() % 1).to.equal(0);
+  });
 
-	it('Should take a parameter to use as max value', function() {
-		var maxRoll = 12;
-		expect(dice.roll(maxRoll)).to.equal(maxRoll);
-	});
+  it('Should take a parameter to use as max value', function() {
+    var maxRoll = 12;
+    expect(dice.roll(maxRoll)).to.equal(maxRoll);
+  });
 
   it('Should show a list of rolls when rollHistory is called', function() {
     var previousHistoryCount = dice.rollHistory().length;
