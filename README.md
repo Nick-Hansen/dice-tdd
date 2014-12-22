@@ -10,7 +10,7 @@ Check out this code. Ensure you are on master branch. Run `npm test` to see the 
 will be due to the module dice.js being missing. Create an empty file called `dice.js` in the root of the project
 and you should see the full test suite run and fail.
 
-Start by opening up `test/dice.js` and reading the tests. Tests all call the `it()` function. The first test looks 
+Start by opening up `test/dice-test.js` and reading the tests. Tests all call the `it()` function. The first test looks 
 like this:
 
     it('Should be a number within a valid range when rolled', function() {
