@@ -29,11 +29,11 @@ describe('Test for dice module', function() {
     mockery.disable();
   });
 
-  it('Should be a number within a valid range when rolled', function() {
+  it('Should return six', function() {
     expect(dice.roll()).to.equal(6);
   });
 
-  it('Should be a number within a valid range when rolled 2', function() {
+  it('Should return one', function() {
     randomStub.returns(0.00001);
     expect(dice.roll()).to.equal(1);
     randomStub.returns(0.999999);
@@ -46,10 +46,6 @@ describe('Test for dice module', function() {
 
     expect(randomStub.callCount).to.equal(callCount + 1);
 
-  });
-
-  it('Should be a whole number', function() {
-    expect(dice.roll() % 1).to.equal(0);
   });
 
   it('Should take a parameter to use as max value', function() {
