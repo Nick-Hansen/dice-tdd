@@ -13,32 +13,30 @@ and you should see the full test suite run and fail.
 Start by opening up `test/dice-test.js` and reading the tests. Tests all call the `it()` function. The first test looks 
 like this:
 
-    it('Should be a number within a valid range when rolled', function() {
-        expect(dice.roll()).to.be.within(1,6);
+    it('Should return six', function() {
+        expect(dice.roll()).to.equal(6);
     });
 
-See that it runs `dice.roll()` and expects the returned value to be a number between 1 and 6. You can make this 
+See that it runs `dice.roll()` and expects the returned value to be 6. You can make this 
 pass by adding this code to the `dice.js` module:
 
     var roll = function() {
-        return 1;
+        return 6;
     }
     
     module.exports = {
         roll: roll
     }
 
-Save that file and re-run the test. You should have at least one (maybe two) passing tests.
+Save that file and re-run the test. You should have a passing test.
 
 Explanation of what just happened:
 ==================================
 
-You created one function called roll that simply returns the number 1. You then exported an object `{  }` with 
+You created one function called roll that simply returns the number 6. You then exported an object `{  }` with 
 a single value, roll, which was the roll function.
 
-When you ran the test `dice.roll()` returned a value between 1 and 6 and the test passed. The third test also 
-passed because 1 is a whole number. Don't worry if sometimes your tests start to fail in the process of fixing
-other tests.
+When you ran the test `dice.roll()` returned an acceptable value and the test passed.
 
 Your goal:
 ==========
@@ -68,6 +66,8 @@ In this case, `random()` will have exactly the same behavior as `Math.random()`;
 * There is a `before()` function defined in the tests, which runs before the first test is executed. It intercepts
 the call to `require('./randomHelper')` and replaces it with a stub function which always returns 0.99999. There
 is also an `after()` function which reverses this functionality.
+
+Notice that in the second test we temporarily change the return value of the stub so that it returns 0.00001, checks the return value of the roll() function and then reverts the stub's behavior. This forces us to write smarter code.
 
 How to check your work
 ======================
