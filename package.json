@@ -1,6 +1,6 @@
 {
   "name": "dice-tdd",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "A utility for rolling dice, useful as an example for TDD and mocking with near 100% code coverage.",
   "main": "dice.js",
   "author": "Matthew Nuzum",
